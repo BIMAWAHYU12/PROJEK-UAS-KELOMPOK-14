@@ -162,7 +162,7 @@ def main():
             datag['Kategori kesehatan mental'] = ""
             #menghasilkan indikator dengan menngunakan ambang batas
             for i in range(len(data)):
-                data.at[i, 'Kategori Tekanan Darah'] = st.session_state['health_data'].analyze_category(data.at[i, 'Tekanan Darah'], [140, 160])
+                data.at[i, 'Kategori Tekanan Darah'] = st.session_state['health_data'].analyze_category(data.at[i, 'Tekanan Darah'], [130, 140])
                 data.at[i, 'Kategori Gula Darah'] = st.session_state['health_data'].analyze_category(data.at[i, 'Gula Darah'], [140, 200])
                 data.at[i, 'Kategori Kolestrol'] = st.session_state['health_data'].analyze_category(data.at[i, 'Kolesterol'], [200, 240])
             # Mengisi kategori pada data kesehatan mental
