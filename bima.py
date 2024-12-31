@@ -40,7 +40,7 @@ def analyze_health(data): #fungsi untuk menganalisis kesehatan berdasarkan bmi
     else:
         advice += "- Kolesterol Anda sangat tinggi. Segera konsultasikan dengan dokter.\n"
 
-    if latest['Waktu Olahraga'] >= 30:
+    if latest['Waktu Olahraga'] >= 15:
         advice += "- Anda sudah cukup berolahraga. Pertahankan rutinitas ini.\n"
     else:
         advice += "- Anda kurang berolahraga. Mulai dengan aktivitas ringan seperti jalan kaki atau peregangan 15-30 menit sehari. Lakukan secara rutin dan bertahap, hingga tubuh terbiasa.\n"
