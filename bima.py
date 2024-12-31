@@ -12,9 +12,9 @@ def analyze_health(data): #fungsi untuk menganalisis kesehatan berdasarkan bmi
         return "Data tidak valid. Pastikan data yang dimasukkan benar."
 
     advice = ""
-    if latest['Tekanan Darah'] < 140:
+    if latest['Tekanan Darah'] < 130:
         advice += "- Tekanan darah Anda normal. Pertahankan pola hidup sehat.\n"
-    elif latest['Tekanan Darah'] < 160:
+    elif latest['Tekanan Darah'] < 140:
         advice += "- Tekanan darah Anda sedikit tinggi. Pastikan Anda melakukan olahraga dan mengurangi kosumsi garam.\n"
     else:
         advice += "- Tekanan darah Anda tinggi. Kurangi konsumsi garam, makanan olahan, dan alkohol. Perbanyak makan sayuran hijau, buah-buahan, dan lakukan olahraga ringan seperti jalan kaki 30 menit sehari. Konsultasikan ke dokter jika tekanan darah terus meningkat..\n"
