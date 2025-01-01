@@ -12,12 +12,12 @@ def analyze_health(data): #fungsi untuk menganalisis kesehatan berdasarkan bmi
         return "Data tidak valid. Pastikan data yang dimasukkan benar."
 
     advice = ""
-    if latest['Tekanan Darah'] < 130:
+    if latest['Tekanan Darah'] < 90:
+        advice += "- Tekanan darah Anda rendah. makan makanan bergizi dan minum air yang cukup, mulai komsultasikan ke dokter jika gejala yang di alami berkelanjutan.\n"
+    elif latest['Tekanan Darah'] < 121:
         advice += "- Tekanan darah Anda normal. Pertahankan pola hidup sehat.\n"
-    elif latest['Tekanan Darah'] < 140:
-        advice += "- Tekanan darah Anda sedikit tinggi. Pastikan Anda melakukan olahraga dan mengurangi kosumsi garam.\n"
     else:
-        advice += "- Tekanan darah Anda tinggi. Kurangi konsumsi garam, makanan olahan, dan alkohol. Perbanyak makan sayuran hijau, buah-buahan, dan lakukan olahraga ringan seperti jalan kaki 30 menit sehari. Konsultasikan ke dokter jika tekanan darah terus meningkat..\n"
+        advice += "- Tekanan darah Anda masuk kategori tinggi. Kurangi konsumsi garam, makanan olahan, dan alkohol. Perbanyak makan sayuran hijau, buah-buahan, dan lakukan olahraga ringan seperti jalan kaki 30 menit sehari. Konsultasikan ke dokter jika tekanan darah terus meningkat..\n"
 
     if bmi < 18.5:
         advice += "- BMI Anda menunjukkan berat badan kurang. Tingkatkan asupan kalori sehat dengan menambah lemak sehat seperti alpukat, kacang-kacangan, ikan, dan susu. Lakukan olahraga angkat beban untuk membangun massa otot. Perhatikan asupan protein, karbohidrat kompleks, dan vitamin.\n"
@@ -45,9 +45,11 @@ def analyze_health(data): #fungsi untuk menganalisis kesehatan berdasarkan bmi
     else:
         advice += "- Anda kurang berolahraga. Mulai dengan aktivitas ringan seperti jalan kaki atau peregangan 15-30 menit sehari. Lakukan secara rutin dan bertahap, hingga tubuh terbiasa.\n"
 
-    if 7 <= latest['Waktu Tidur'] <= 9:
+    if latest['Waktu Tidur'] <= 7:
+        advice += "- Waktu tidur Anda kurang. Hindari kafein atau penggunaan gadget sebelum tidur. Buat lingkungan tidur lebih nyaman dan tentukan jam tidur yang konsisten. Pertimbangkan teknik relaksasi seperti meditasi atau membaca buku sebelum tidur.\n"
+    elif latest['waktu Tidur'] <=9:
         advice += "- Waktu tidur Anda cukup. Pertahankan pola tidur yang baik.\n"
     else:
-        advice += "- Waktu tidur Anda kurang atau berlebihan. Usahakan tidur 7-9 jam per hari.Hindari kafein atau penggunaan gadget sebelum tidur. Buat lingkungan tidur lebih nyaman dan tentukan jam tidur yang konsisten. Pertimbangkan teknik relaksasi seperti meditasi atau membaca buku sebelum tidur.\n"
+        advice += "- Waktu tidur Anda berlebihan. Usahakan tidur 7-9 jam per hari, waktu tidur yang berlebihan dapat menyebabkan obesitas dan diabetes.\n"
  
     return advice
